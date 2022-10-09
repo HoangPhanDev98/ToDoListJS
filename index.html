@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn DOM</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./style/main.css" />
+</head>
+
+<body>
+  <section class="my-4">
+    <div class="container">
+      <form id="todoFormId">
+        <div class="mb-3">
+          <label for="todoText" class="form-label">What are you going to do?</label>
+          <input name="todoText" type="text" id="todoText" class="form-control" />
+        </div>
+        <div class="mb-3">
+          <label for="todoStatus" class="form-check-label">Finish?</label>
+          <input name="todoStatus" type="checkbox" id="todoStatus" class="form-check-input" />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="my-4">
+    <div class="container">
+      <h1>Todo List</h1>
+      <div class="input-group my-3">
+        <span class="input-group-text" id="searchTermSpan">Search</span>
+        <input id="searchTerm" type="text" class="form-control" aria-label="Username" aria-describedby="searchTermSpan">
+      </div>
+      <div class="input-group my-3">
+        <label class="input-group-text" for="filterStatus">Status</label>
+        <select class="form-select" id="filterStatus">
+          <option selected value="all">All</option>
+          <option value="pending">Pending</option>
+          <option value="completed">Completed</option>
+        </select>
+      </div>
+      <ul id="todoList" class="todo-list"></ul>
+    </div>
+  </section>
+
+  <!-- TEMPLATE -->
+  <template id="todoTemplate">
+    <li>
+      <div class="todo alert alert-secondary" role="alert">
+        <div class="d-flex justify-content-between align-items-center">
+          <p class="todo__title mb-0">TODO TITLE</p>
+          <div class="todo__actions">
+            <button type="button" class="btn btn-sm btn-success mark-as-done">Finish</button>
+            <button type="button" class="btn btn-sm btn-info edit">Edit</button>
+            <button type="button" class="btn btn-sm btn-danger remove">Remove</button>
+          </div>
+        </div>
+      </div>
+    </li>
+  </template>
+
+  <!-- SCRIPT -->
+  <script src="./js/19-20-create-todo.js"></script>
+  <script src="./js/19-23-persist-filters.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

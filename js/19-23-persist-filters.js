@@ -18,7 +18,7 @@ function isMatchSearch(todoElement, searchTerm) {
 }
 
 function isMatch(todoElement, params) {
-  if(!params) return;
+  if (!params) return true;
   if (!params.get("searchTerm") && !params.get("status")) return true;
   if (!params.get("searchTerm") && params.get("status")) {
     return isMatchStatus(todoElement, params.get("status"));
